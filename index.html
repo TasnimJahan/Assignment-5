@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Website</title>
+    <!-- font family link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <section id="home" class="container">
+        <!-- navbar -->
+        <div class="container mb-5 pt-3">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#"> Cooking master </a>
+              <button
+                class="navbar-toggler justify-content-end"
+                style="border: none"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span
+                  class="fa fa-bars small-nav justify-content-end"
+                  style="font-size: 25px"
+                ></span>
+              </button>
+              <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav"
+              >
+                <ul class="navbar-nav text-center ms-auto">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-dark"
+                      aria-current="page"
+                      href="#home"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#recipes">Recipes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="#blog">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </section>
+    </header>
+    <main class="container">
+      <!-- Ingredient list -->
+      <div id="ingredientsDiv">
+        <div class="col">
+            <div class="card h-100 box ingredient-food">
+              <img id="ingredientImage" src="" class="card-img-top food-img" alt="...">
+              <div class="card-body">
+                <h5 style="margin-bottom: 3%;" id="ingredientTitle" class="card-title title"></h5>
+              </div>
+              <div id="listOfIngredients">
+                  <h6 style="margin-bottom: 5%;">Ingredients</h6>
+              </div>
+            </div> 
+          </div>
+      </div>
+       <!-- Wrong input error -->
+      <div id="wrongValueDiv"></div>
+
+      <!-- search bar -->
+      <form class="col-md-6 m-auto py-5">
+        <div class="input-group mb-3">
+          <input
+            id="foodName"
+            type="text"
+            class="form-control"
+            placeholder="Search for meal..."
+          />
+          <div class="input-group-append">
+            <button id="search" type="button" class="btn">Search</button>
+          </div>
+        </div>
+      </form>
+      <!-- food item -->
+      <div id="foodItemDiv" class="row row-cols-1 row-cols-md-4 g-4"></div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
