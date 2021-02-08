@@ -19,22 +19,11 @@ function searchByName(nameOfFood) {
     // display food
     const displayFood = (foods) => {
         if (foods.meals === null) {
-            const wrongValueDiv = document.getElementById("wrongValueDiv");
-            const wrongValue = document.createElement("div");
-            wrongValue.className = "wrongInput";
-
-            wrongValue.innerHTML = `
-            <div class="card text-center bg-danger wrongText w-70">
-                <div class="card-header">
-                    <h2>OOPS!!!</h2>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">No item found</h5>
-                    <p class="card-text">Please give the correct food name</p>
-                </div>
-          </div>
-            `;
-            wrongValueDiv.appendChild(wrongValue);
+            document.getElementById("wrongValueDiv").style.display = "block";
+            document.getElementById("ingredientsDiv").style.display = "none";
+            document.getElementById("notMatched").addEventListener("click", function () {
+                document.getElementById("wrongValueDiv").style.display = "none";
+            })
         } else {
             const foodItemDiv = document.getElementById("foodItemDiv");
 
@@ -76,14 +65,20 @@ const displayIngredientsFood = (foodId) => {
         }
         const listOfIngredients = document.getElementById("listOfIngredients");
         const p = document.createElement("p");
-        p.innerText = ingredientItem;
+
         listOfIngredients.appendChild(p);
+        const span1 = document.createElement("span");
+        span1.innerHTML = `<i class="fas fa-check-square"></i>`;
+        const span2 = document.createElement("span");
+        span2.innerText = ingredientItem;
+        // p.innerText = ingredientItem;
+        p.appendChild(span1);
+        p.appendChild(span2);
     }
 
     // ingredient image and title
     const ingredientImage = document.getElementById("ingredientImage");
     ingredientImage.src = foodId.strMealThumb;
-
     const ingredientTitle = document.getElementById("ingredientTitle");
     ingredientTitle.innerText = foodId.strMeal;
 }
